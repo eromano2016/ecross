@@ -230,15 +230,7 @@ def optimize_vehicle_charging_day(
 
     final_soc = float(pyo.value(model.SoC[T - 1]))
 
-    # Build optional decision-variables payloads
-    extras = None
-    if return_pyomo_vars or return_model:
-        extras = {
-            'vars_pyomo': {'c': model.c, 'd': model.d, 'SoC': model.SoC} if return_pyomo_vars else None,
-            'vars_values': {
-                'c': np.array(c_vals), 'd': np.array(d_vals), 'SoC': np.array(soc_vals)
-            }
-        }
+    
 
     
     return resultats, daily_summary['daily_cost_CHF'], final_soc, daily_summary
