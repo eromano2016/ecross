@@ -6,7 +6,7 @@ import logging
 # Setup logging
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
-# === PARAMETERS ===
+# === PARAMETERS for optimization loop ===
 file_path = ''
 SoC_initial_default = 15
 n_days = 365
