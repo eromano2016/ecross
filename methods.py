@@ -240,14 +240,6 @@ def optimize_vehicle_charging_day(
             }
         }
 
-    # Return shape:
-    # - default (backward-compatible): 4 items
-    # - +extras when flags used
-    if return_pyomo_vars and not return_model:
-        return resultats, daily_summary['daily_cost_CHF'], final_soc, daily_summary
-    elif not return_pyomo_vars  and not return_model:
-        return resultats, daily_summary['daily_cost_CHF'], final_soc, daily_summary, extras
-    elif not return_pyomo_vars and return_model:
-        return resultats, daily_summary['daily_cost_CHF'], final_soc, daily_summary, model
-    else:
-        return resultats, daily_summary['daily_cost_CHF'], final_soc, daily_summary, extras, model
+    
+    return resultats, daily_summary['daily_cost_CHF'], final_soc, daily_summary
+    
